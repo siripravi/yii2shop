@@ -22,7 +22,7 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-     Yii::$app->assetManager->bundles['yii\bootstrap5\BootstrapAsset'] = [
+    /* Yii::$app->assetManager->bundles['yii\bootstrap5\BootstrapAsset'] = [
             'basePath'   => '@web',
            // 'sourcePath' => [],
            // 'css'        => ['css/styles.css'],
@@ -30,9 +30,9 @@ class Module extends \yii\base\Module
         ];
 
         Yii::$app->assetManager->bundles[]= [ 
-	       'deyraka\materialdashboard\web\MaterialDashboardAsset',
+	      // 'deyraka\materialdashboard\web\MaterialDashboardAsset',
 	
-	  ];
+	  ];*/
     }
 
 }

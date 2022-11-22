@@ -17,6 +17,9 @@
     "require": {
         "php": ">=7.4.0",
         "yiisoft/yii2": "~2.0.45",
+        "yiisoft/yii2-authclient": "~2.2.7",
+         "cebe/yii2-gravatar": "~1.1",
+         "claviska/simpleimage": "^3.3",
         "yiisoft/yii2-bootstrap5": "~2.0.2",
         "kartik-v/yii2-widget-fileinput": "@dev",
         "wbraganca/yii2-dynamicform": "2.0.3",
@@ -35,8 +38,11 @@
         "hail812/yii2-adminlte3": "~1.1" ,
         "kartik-v/yii2-icons": "@dev",
         "siripravi/yii2-slideradmin": "@dev",
-        "yii-dream-team/yii2-upload-behavior": "*"
-
+        "yii-dream-team/yii2-upload-behavior": "*",
+        "dominus77/yii2-owl-carousel-2": "dev-master",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "lesha724/yii2-math-captcha": "*"
+        
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -2,7 +2,7 @@
 
 namespace app\admin\models;
 
-use app\modules\products\models\Product;
+use admin\modules\products\models\Product;
 use admin\modules\sortable\behaviors\SortableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;

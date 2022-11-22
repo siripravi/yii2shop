@@ -52,7 +52,7 @@ $this->registerJs($js);
                 <h3 class="card-title"><?= $model->isNewRecord ? "Add New Category": $model->title;?></h3>
             </div>    
             <div class="col-4 justify-content-end">
-                <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-lg btn-warning' : 'btn btn-lg btn-warning']) ?>
+                <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-md btn-warning' : 'btn btn-md btn-warning']) ?>
             </div>
         </div>    
         <div class="card-body"> 

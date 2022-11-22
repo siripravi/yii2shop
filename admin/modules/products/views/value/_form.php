@@ -11,10 +11,10 @@ use yii\helpers\Html;
 /* @var $modal boolean */
 ?>
 
-<div class="value-form">
+<div class="card-body">
 
     <?php $form = ActiveForm::begin([
-        'id' => $model->formName(),
+        'id' => $model->formName(),'layout' => 'horizontal'
     ]); ?>
 
     <?php if (!$modal) : ?>

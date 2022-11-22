@@ -67,7 +67,7 @@ class ReviewController extends Controller
         $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('page', 'Information has been saved successfully.'));
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Information has been saved successfully.'));
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
@@ -89,7 +89,7 @@ class ReviewController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('page', 'Information has been saved successfully.'));
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Information has been saved successfully.'));
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [

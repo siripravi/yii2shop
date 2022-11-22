@@ -1,49 +1,59 @@
 <?php
-
-/** @var yii\web\View $this */
-/** @var yii\bootstrap5\ActiveForm $form */
-/** @var app\models\LoginForm $model */
-
+use yii\helpers\Html;
 use yii\bootstrap5\ActiveForm;
-use yii\bootstrap5\Html;
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model \app\models\LoginForm */
+
+$this->title = Yii::t('app', 'Login');
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to login:</p>
-
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n{input}\n{error}",
-            'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
-            'inputOptions' => ['class' => 'col-lg-3 form-control'],
-            'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
-        ],
-    ]); ?>
-
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-        <?= $form->field($model, 'password')->passwordInput() ?>
-
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"offset-lg-1 col-lg-3 custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="offset-lg-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+<div class="row">
+    <div class="col-12 mt-3 text-center text-uppercase">
+        <h2>Login</h2>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-8 mx-auto bg-white py-3 mb-4">
+    <main class="row">
+        <div class="col-12">
+            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+            <div class="mb-3">
+                <?= $form->field($model, 'username')
+                ->textInput(['placeholder' => $model->getAttributeLabel('username')])
+                ->label(false) ?>
+            </div> 
+            <div class="mb-3">   
+            <?= $form->field($model, 'password')
+                ->passwordInput(['placeholder' => $model->getAttributeLabel('password')])
+                ->label(false) ?>
+            </div>    
+            <div class="form-group mb-3">
+                <?= Html::submitButton(Yii::t('app', 'Login'), ['class' => 'btn btn-outline-dark', 'name' => 'login-button']) ?>
             </div>
+            <p class="hint-block mb-3">
+                <?= Yii::t('app', 'If you forgot your password you can {reset_it}.', [
+                    'reset_it' => Html::a(Yii::t('app', 'reset it'), ['site/request-password-reset']),
+                ]) ?>
+            </p>
+            <?php ActiveForm::end(); ?>
         </div>
+    </main>
+    <div class="divider">
+            <?= Yii::t('app', 'or') ?>
+    </div>
 
-    <?php ActiveForm::end(); ?>
+    <div class="oauth-box">
+        <div class="registration-prompt">
+            <?= Yii::t('app', 'Don\'t have an account? {signUpLink}', [
+                    'signUpLink' => Html::a(Yii::t('app', 'Sign up!'), ['/site/signup'])
+                ]) ?>
+    </div>
 
-    <div class="offset-lg-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
+    <?= \app\widgets\AuthChoice::widget([
+                'options' => ['class' => 'auth-clients-wrapper'],
+                'baseAuthUrl' => ['site/auth'],
+                'popupMode' => false,
+    ]) ?>
+       
     </div>
 </div>

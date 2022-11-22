@@ -12,12 +12,10 @@ use yii\bootstrap5\ActiveForm;
 
 <?php $form = ActiveForm::begin(); ?>
 <div class="card card-primary review-form">
-    <div class="card-header">
-        <div class="card-title ">                
+    <div class="card-header">       
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">             
+            <?= Html::submitButton($model->isNewRecord ? "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-md btn-warning' : 'btn btn-warning']) ?>
         </div>
-        <div class="card-tools">
-            <?= Html::submitButton(($model->isNewRecord) ? "<i class='fas fa-save'></i> Create" : "<i class='fas fa-save'></i> Update", ['class' => 'btn btn-lg btn-flat btn-warning']) ?>
-        </div>    
     </div>
     <div class="card-body">    
         <div class="row">
@@ -32,7 +30,7 @@ use yii\bootstrap5\ActiveForm;
             </div>
         </div>
        
-            <?= $form->field($model, 'question')->textarea(['rows' => 6]) ?>
+        <?= $form->field($model, 'question')->textarea(['rows' => 6]) ?>
                     <?= $form->field($model, 'answer')->widget(CKEditor::className(), [
                         'preset' => 'full',
                         'clientOptions' => [
@@ -40,9 +38,8 @@ use yii\bootstrap5\ActiveForm;
                             'language' => Yii::$app->language,
                             'allowedContent' => true,
                         ]
-                    ]) ?>                    
-                    <!--?= $form->field($model, 'created_at')->textInput()->label('Создан (unixtime)') ?-->                           
-       
+        ]) ?>                    
+        <!--?= $form->field($model, 'created_at')->textInput()->label('Создан (unixtime)') ?-->
     </div>
 </div>           
 <?php ActiveForm::end(); ?>

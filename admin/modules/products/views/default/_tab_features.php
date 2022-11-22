@@ -2,6 +2,8 @@
 use yii\widgets\Pjax;
 use yii\base\Widget;
 use yii\helpers\Html;
+use kartik\widgets\Select2;
+use admin\modules\products\models\Value;
 ?>
 
 <?php Pjax::begin(['id' => 'feature-pjax']); ?>

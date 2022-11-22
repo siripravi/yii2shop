@@ -1,5 +1,5 @@
 <?php
-
+use yii\authclient\Collection;
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -19,6 +19,22 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Mx3-M-iXODDptssVYApG8WbGG9M4Dp5Q',
         ],*/
+        'topmenu'=>[
+            'class'=>'app\widgets\TopNav'
+        ],
+        'authClientCollection' => [
+            'class' => Collection::class,
+            'clients' => require __DIR__ . '/authclients.php',
+        ],
+       // 'urlManager' => $params['components.urlManager'],
+       // 'queue' => $params['components.queue'],
+        'assetManager' => [
+            'linkAssets' => true,
+            'appendTimestamp' => true,
+            'bundles' => [
+                \yii\authclient\widgets\AuthChoiceStyleAsset::class => false
+            ]
+        ],
         'assetManager' => [
             'appendTimestamp' => true,
             'class' => 'yii\web\AssetManager',
@@ -35,6 +51,7 @@ $config = [
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [],
                 ],
+                //'yii\web\JqueryAsset' => false,
                 'yii\bootstrap\BootstrapThemeAsset' => [
                     'css' => [],
                 ],
@@ -55,6 +72,9 @@ $config = [
             'viewPath' => '@app/mail',
             // send all mails to a file by default.
             'useFileTransport' => true,
+        ],
+        'mailer2' => [
+            'class' => 'yii\swiftmailer\Mailer',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

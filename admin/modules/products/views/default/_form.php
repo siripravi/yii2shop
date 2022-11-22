@@ -129,12 +129,23 @@ $this->registerJs($js);
             ];
         $items[] = [
                 'label' => 'Features',
-                'content' => $this->render("_tab_features",['model'=>$model,'form'=>$form]),
+                'content' => $this->render("_tab_features",[
+                    //'model'=>$model,
+                    //'form'=>$form,
+                    'modelsVariant' => $modelsVariant,
+                    'features' => $features
+                ]),
                 
             ];
         $items[] = [
                 'label' => 'Group',
-                'content' => $this->render("_tab_comp",['model'=>$model,'form'=>$form]),
+                'content' => $this->render("_tab_comp",[
+                    'model'=>$model,
+                    'form'=>$form,
+                    //'autoIdPrefix' => $autoIdPrefix,
+                   
+                
+                 ]),
                 
             ];
             $items[] = [
@@ -144,32 +155,27 @@ $this->registerJs($js);
             ];        
         ?> 
 
-<div class="card card-primary">      
-        <div class="card-header">
-        <blockquote class="blockquote">
-            <p>Fill All required fields and click the button on right to save the data.</p>
-        </blockquote>
+<div class="card bg-secondary mb-3">      
+        <div class="card-header">       
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">             
-                <?= Html::submitButton($model->isNewRecord ? "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-lg btn-warning' : 'btn btn-lg btn-warning']) ?>
+                <?= Html::submitButton($model->isNewRecord ? "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-md btn-warning' : 'btn btn-warning']) ?>
             </div>
-        </div>  
-         
-        <div class="card-body"> 
+        </div>           
         <?php
-            echo Tabs::widget([
-               // 'navType' => 'nav-tabs card-header full-width-tabs',
-                'navType' => 'nav nav-pills nav-fill',
-                'items' =>      $items,
-                'tabContentOptions' =>['class'=>'p-4'],
-                'itemOptions' => ['class'=>'card-body'],
-                'headerOptions' => ['class'=>'use-max-space']
-                
-            ]);  
-        ?>   
-   <div class="card-footer">
-    *Please fill all the required information ad click the button on right top.
-  </div>
-  <!-- /.card-footer -->
+                echo Tabs::widget([
+                // 'navType' => 'nav-tabs card-header full-width-tabs',
+                    'navType' => 'nav nav-pills nav-fill',
+                    'items' =>      $items,
+                    'tabContentOptions' =>['class'=>'p-4'],
+                    'itemOptions' => ['class'=>'card-body'],
+                    'headerOptions' => ['class'=>'use-max-space']
+                    
+                ]);  
+            ?>   
+            <div class="card-footer">
+                *Please fill all the required information ad click the button on right top.
+            </div>
+            <!-- /.card-footer -->
 </div>
 <?php ActiveForm::end(); ?>
 

@@ -72,7 +72,7 @@ $currencyDef = Currency::findOne(Yii::$app->params['currency_id']);
            // 'linkContainerOptions' => ['class' => 'page-item p-2 rounded']
         ],
         'itemOptions' => [
-                'class' => 'col-md-3'
+                'class' => 'col'
          ],
       //  'filterModel' => $searchModel,
       /*  'rowOptions' => function ($model, $key, $index, $grid) {

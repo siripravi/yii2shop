@@ -23,15 +23,29 @@ if (@$model->variants[0]->price) {
 }
 ?>
 
-<div class="card card-light bg-light text-white mb-3 " style="width: 18rem;">  
+<div class="card bg-light text-center mb-4" style="width:14rem"> 
+    
         <?php if ($model->image) { ?>
-		<img src="<?= ImageHelper::thumb($model->image->id, 'micro') ?>" alt="<?= $model->image->alt ? $model->image->alt : $model->name ?>" title="<?= $model->title ?>" class="card-img rounded-circle">
+		<img src="<?= ImageHelper::thumb($model->image->id, 'micro') ?>" alt="<?= $model->image->alt ? $model->image->alt : $model->name ?>" title="<?= $model->title ?>" class="card-img ">
 			<?php } else { ?>
-				<img class="card-img rounded-circle" src="<?= Yii::$app->params['image']['none'] ?>" alt="">
-		<?php } ?>  
-        <div class="text-dark text-center">
-            <h3><?= $model->name;?></h3> 
-            <h4><?php echo $model->variants[0]->price;?></h4>
+				<img class="card-img" src="<?= Yii::$app->params['image']['none'] ?>" alt="">
+		<?php } ?>
+        <div class="card-img-overlay" style="height:80%">
+            <p class="card-title text-info bg-light text-wrap text-break bd-highlight"><?= $model->name;?></p>
+            <div class="card-subtitle">
+                In <?=$model->categories[0]->shortTitle;?>
+            </div>
+            <p><?php echo $model->variants[0]->price;?></p> 
+        </div>
+        <div class="card-footer">           
+                <?php
+                /*echo Button::widget([
+                    'label' => 'Edit',
+                    'options' => ['class' => 'btn btn-primary'],
+                ]);*/ 
+                echo Html::a("Edit",Url::to('/admin/products/default/update?id='.$model->id),['class'=>'card-link']);
+                ?>           
+            
         </div>
         <?php
          /* echo Dropdown::widget([
@@ -40,22 +54,5 @@ if (@$model->variants[0]->price) {
                   ['label' => 'DropdownB', 'url' => '#'],
               ],
           ]);*/
-        ?>           
-    
-     <div class="card-body text-white">
-        <div class="row">
-            <div class="text-end">
-                <?php
-                /*echo Button::widget([
-                    'label' => 'Edit',
-                    'options' => ['class' => 'btn btn-primary'],
-                ]);*/ 
-                echo Html::a("Edit",Url::to('/admin/products/default/update?id='.$model->id),['class'=>'btn btn-warning']);
-                ?>           
-            </div>       
-            <div class="text-start">
-                In<h6><?=$model->categories[0]->shortTitle;?></h6>
-            </div>
-        </div>              
-    </div>   
+        ?>
 </div>
