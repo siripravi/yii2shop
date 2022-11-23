@@ -26,10 +26,20 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         '//code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js',
-        'js/main.js'
+        //'js/main.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset'
+        'yii\bootstrap5\BootstrapAsset',
+        'app\assets\ExampleAsset'
     ];
+
+    public function setCSSJSFiles($css,$js)
+   {
+    $this->css = array($css);        
+    $this->js = array($js);
+   }
+  // public function __construct(){
+  //  $this->jsOptions= ['depends' => $this->depends];
+   //}
 }

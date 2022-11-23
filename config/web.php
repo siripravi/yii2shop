@@ -9,6 +9,7 @@ $config = [
     'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    //'theme' => 'alpine',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -67,6 +68,14 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'view' => [
+            'class' => 'yii\web\View',
+            'theme' => [
+              'class' => 'yii\base\Theme',
+              'pathMap' => ['@app/views' => 'themes/alpine'],
+              'baseUrl'   => 'themes/alpine'
+            ]
+            ],
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,
             'viewPath' => '@app/mail',

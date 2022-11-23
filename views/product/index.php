@@ -155,7 +155,7 @@ die;
 ]) ?>
 </div> 
 </section> 
-<?= OrderScheme::widget(['baseUrl' => $this->theme ? $this->assetManager->getBundle(app\site\assets\SiteAsset::class)->baseUrl : null]) ?>
+<?= OrderScheme::widget() ?>
 
 <!--?= $rating['value'] ?--><!--?= //$rating['count'] ?-->
 <script type='application/ld+json'>

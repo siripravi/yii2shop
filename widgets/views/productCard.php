@@ -31,43 +31,44 @@ if (@$model->variants[0]->price) {
 }
 ?>
 
-<div class="card mb-4 imgBox border-0">
-       
-    <div class="card-header overflow-hidden position-relative p-0">
-        <?php if ($model->image) { ?>
-                <img src="<?= ImageHelper::thumb($model->image->id, 'micro') ?>" alt="<?= $model->image->alt ? $model->image->alt : $model->name ?>" title="<?= $model->title ?>" class="img-fluid w-100">
+<div class="card mb-4 product border-1 pb-3">
+    <?php if ($model->image) { ?>
+                <img src="<?= ImageHelper::thumb($model->image->id, 'micro') ?>" alt="<?= $model->image->alt ? $model->image->alt : $model->name ?>" title="<?= $model->title ?>" class="card-img-top">
         <?php } else { ?>
-                <img class="img-fluid w-100" src="<?= Yii::$app->params['image']['none'] ?>" alt="">
-        <?php } ?>
-        <div class="card-img-overlay">
-            <?php
+                <img class="card-img-top" src="<?= Yii::$app->params['image']['none'] ?>" alt="">
+    <?php } ?>
+    <span class="badge bg-success position-absolute text-white mt-2 ms-2"><a href="/" class="text-white"><?=$model->categories[0]->shortTitle;?></a></span>
+    <?php if($model->statuses):?>
+    <span class="badge  text-white position-absolute r-0 mt-2 me-2" style="background-color:<?=$model->statuses[0]->color;?>;">
+       
+         <?= $model->statuses[0]->name; ?>
+    
+    </span>
+    <?php endif; ?>
+    <span class="rounded position-absolute p-2 bg-warning text-white ms-2 small mt-5"></span>
+    <div class="card-body overflow-hidden position-relative p-0">        
+        <h6 class="card-subtitle mb-2"><a class="text-decoration-none" href="/product/detail"><?= $model->name;?></a></h6>
+        <div class="my-2"><span class="fw-bold h5"><?php echo $model->variants[0]->price;?></span>
+            <!--<del class="small text-muted ms-2">$2000</del>  -->
+            <span class="ms-2">
+                <?php
                 $floor = floor($rating['value']);
                 for ($i = 0; $i < $floor; $i++) {
-                echo '<span><i class="fa fa-star text-warning"></i></span> ';
+                    echo '<span><i class="fa fa-star text-warning"></i></span> ';
+                    }
+                if ($floor < $rating['value']) {
+                        echo '<span><i class="fa fa-star-half text-warning"></i></span> ';
                 }
-            if ($floor < $rating['value']) {
-                    echo '<span><i class="fa fa-star-half text-warning"></i></span> ';
-            }
-            ?>
-        </div> 
-    </div>
-    <div class="card-body p-0 bg-black text-white">
-        <h6 class="text-center my-3"><?= $model->name;?></h6>
-        <p>In <a href="/"><?=$model->categories[0]->shortTitle;?></a></p>
-        <div class="d-flex justify-content-center mb-1">
-            <h6>$123.00</h6><h6 class="text-muted ms-2"><del><?php echo $model->variants[0]->price;?></del></h6>
+                ?>     
+            </span>
+        </div>
+        <div class="btn-group  d-flex" role="group">
+            <button type="button" class="btn btn-sm btn-primary" title="Add to cart">
+                <iconify-icon icon="ei:cart" style="font-size:32px"></iconify-icon>
+            </button>
+            <a type="button" href="<?= $link; ?>" class="btn btn-sm btn-outline-warning" title="View Detail">
+                <iconify-icon icon="carbon:view" width="32" height="32"></iconify-icon>
+            </a>
         </div>
     </div>
-    <div class="card-footer bg-black">
-        <div class="d-flex justify-content-between border-top border-danger">
-            <a href="<?= $link;?>" class="btn btn-sm text-dark my-1 border-0 text-white" title="View Detail">
-            <iconify-icon icon="carbon:view" width="32" height="32"></iconify-icon>
-            </a>
-            <a href="#" class="btn btn-sm text-dark my-1 border-0 text-white" title="Add To Cart">
-            <iconify-icon icon="ei:cart" style="font-size:32px"></iconify-icon>
-            </a>
-        </div>        
-    </div>
-
-    
 </div>

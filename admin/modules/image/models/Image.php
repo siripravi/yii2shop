@@ -254,8 +254,8 @@ class Image extends ActiveRecord
             $img = $img_new;
         }
 
-        $wm = $param['watermark'];
-        if ($wm['enabled']) {
+        $wm = isset($param['watermark']) ? $param['watermark'] : [];
+        if (isset($wm['enabled']) ){
             $watermark = Picture::getImagine()->open($wm['file']);
             $wSize = $watermark->getSize();
             $wSizeW = $wSize->getWidth();

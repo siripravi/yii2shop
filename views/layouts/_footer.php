@@ -8,7 +8,22 @@ use app\widgets\OrderScheme;
     <?= OrderScheme::widget() ?>
 </div>
 <footer class="bg-gradient-dark">
-    <div class="container-fluid bg-dark border-top border-warning rounded-top">
+    <div class="container-fluid bg-primary">
+        <div class="row ">
+            <div class="col-md-9 py-3 text-white">Get connected with us on social networks!</div>
+            <div class="col-md-3 py-3 text-center text-white">
+            <div class="d-inline-flex">
+                <a href="#" class="px-2" title="Follow on Facebook"><iconify-icon icon="ic:outline-facebook" style="color: #FFFFFF;" width="26" ></iconify-icon></i></a>
+                <a href="#" class="px-2"><iconify-icon icon="mdi:twitter" style="color: #FFF;" width="26" ></iconify-icon></a>
+                <a href="#" class="px-2"><iconify-icon icon="ri:instagram-line" style="color: #FFF;" width="26" ></iconify-icon></i></a>
+                <a href="#" class="px-2"><iconify-icon icon="typcn:social-linkedin" style="color: #FFF;" width="26" ></iconify-icon></a>
+                <a href="#" class="px-2"><iconify-icon icon="icon-park-outline:youtube" style="color: #FFF;" width="26" ></iconify-icon></a>
+                <a href="#" class="px-2"><iconify-icon icon="mingcute:pinterest-line" style="color: #FFF;" width="26" ></iconify-icon></a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white">
         <div class="row px-xl-5 pt-5 ">
             <div class="col-lg-4 col-md-12 text-white mb-5">
                 <div class="mb-3">    
@@ -26,20 +41,20 @@ use app\widgets\OrderScheme;
                         <div class="">                        
                             <?php
                             $items = [
-                                ['label' => Yii::t('app', 'Home'), 'url' => ['/']],
-                                ['label' => Yii::t('app', 'Catalog'), 'url' => ['/category/index']],
-                                ['label' => Yii::t('app', 'Find product'), 'url' => ['/podbor/index']],
-                                ['label' => Yii::t('app', 'How to order'), 'url' => ['/site/how']],
-                                ['label' => 'FAQ', 'url' => ['/site/questions'],'options'=>['class'=>'']],
-                                ['label' => Yii::t('app', 'Information'), 'url' => ['/info/index'],'linkOptions'=>['class'=>'text-white mb-2 text-decoration-none']],
-                                ['label' => Yii::t('app', 'Contacts'), 'url' => ['/site/contacts'],'linkOptions'=>['class'=>'text-white mb-2 text-decoration-none']],
-                                ['label' => Yii::t('app', 'Reviews'), 'url' => ['/site/reviews'],'linkOptions'=>['class'=>'text-white mb-2 text-decoration-none']],
+                                ['label' => Yii::t('app', 'Home'), 'url' => ['/'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'Catalog'), 'url' => ['/category/index'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'Find product'), 'url' => ['/podbor/index'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'How to order'), 'url' => ['/site/how'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => 'FAQ', 'url' => ['/site/questions'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'Information'), 'url' => ['/info/index'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'Contacts'), 'url' => ['/site/contacts'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
+                                ['label' => Yii::t('app', 'Reviews'), 'url' => ['/site/reviews'],'options'=>['class'=>'list-group-item bg-dark text-white border-light']],
                             ];
                             echo Menu::widget([
                                 'items' => $items,
                                 'encodeLabels' => false,
-                                'linkTemplate' => '<a class="text-white mb-2 text-decoration-none me-2" href="{url}"><iconify-icon icon="mdi:arrow-right-thick" style="color:#ffc720"></iconify-icon>{label}</a>',
-                                'options' => ['class' => 'd-flex flex-column'],
+                                'linkTemplate' => '<a class="text-decoration-none text-white stretched-link" href="{url}"><iconify-icon icon="mdi:arrow-right-thick" style="color:#ffc720"></iconify-icon>&nbsp;&nbsp;{label}</a>',
+                                'options' => ['class' => 'list-group list-group-flush','style'=>'list-style:none;'],
                             ]);
                             ?>                        
                         </div>
@@ -61,20 +76,15 @@ use app\widgets\OrderScheme;
                 </div>
             </div>
         </div>
-
-    <div class="container">
-        
-        <div class="text-white pb-4 text-center text-md-left">
-            <div class="my-3"><!--= Yii::t('app', 'Office and warehouse work') ?-->: <!--= Yii::$app->params['work_time_' . Yii::$app->language] ?--></div>
-            <div class="my-3"><!--= Yii::$app->params['address_' . Yii::$app->language] ?--></div>
-            <div class="my-3"><?= Yii::$app->params['adminEmail'] ?></div>
+  </div> 
+  <div class="container-fluid bg-secondary text-white text-center">
+    <div class="row">
+        <div class="text-center py-2 bg-gradient-secondary text-white">
+          2019 - <?= date('Y') ?> © <a href="<?= Url::to(['/']) ?>"><?= Yii::$app->name ?></a>
         </div>
     </div>
-    <div class="text-center py-2 bg-gradient-secondary text-white">
-        2017 - <?= date('Y') ?> © <a href="<?= Url::to(['/']) ?>"><?= Yii::$app->name ?></a>
-    </div>
-  </div>  
+  </div> 
   <button type="button"class="btn btn-warning btn-floating btn-lg"id="btn-back-to-top">
-  <iconify-icon icon="mdi:arrow-up-bold-box" style="color: red;" width="24" rotate="0deg"></iconify-icon>
+    <iconify-icon icon="mdi:arrow-up-bold-box" style="color: red;" width="24" rotate="0deg"></iconify-icon>
  </button>
 </footer>

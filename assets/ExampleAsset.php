@@ -19,6 +19,7 @@ class ExampleAsset extends AssetBundle
      * @var array
     */
     public $css = ['css/example.css'];
+    public $js = ['js/main.js'];
 
     
 }

@@ -5,7 +5,7 @@
 
 use app\assets\AppAsset;
 use app\widgets\Alert;
-use yii\bootstrap5\Breadcrumbs;
+
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
@@ -19,8 +19,8 @@ use app\models\Review;
 
 use app\modules\cart\widgets\CartWidget;
 use app\modules\cart\widgets\CartIconWidget;
-use app\models\Category;
-use yii\widgets\Menu;
+
+
 
 use siripravi\slideradmin\models\Slider;
 use siripravi\slideradmin\models\SliderImage;
@@ -40,14 +40,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
 <head>
+    
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
     <style type="text/css">
-         body{
-            background-color:#eef3f6;
-            color:#290d0d;
-         }
+         
          #btn-back-to-top {
             position: fixed;
             bottom: 20px;
@@ -67,42 +65,36 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
 </head>
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
+    
     <?= $this->render('_topNav');?>
     <!-- Navbar Start -->
     <!--Pjax::begin();               
     echo CartWidget::widget();  
-    Pjax::end(); -->
-    
-    <div class="container-fluid mb-5">    
-        <div class="row px-xl-5">           
-            <!-- navbar-menu  -->
-            
-                    <?php
-                          $items = [];
-                        /** @var Page[] $info */
-                        $info = Page::find()
-                        //  ->joinWith('translation')
-                        // ->leftJoin('nxt_page_parent','nxt_page.category_idid = ')
-                            ->select(['nxt_page.name', 'slug'])
-                            ->andWhere(['category_id' => 8])
-                            ->orderBy(['nxt_page.position' => SORT_ASC])
-                            ->limit(5)
-                            ->all();
-
-                        $info_menu = [];
-
-                        foreach ($info as $item) {
-                            $info_menu[] = [
-                                'label' => $item->name,
-                                'url' => ['/info/view', 'slug' => $item->slug],
-                            ];
-                        }
-
-                    ?>
-                
-                <?php if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') : ?>
+    Pjax::end(); -->   
+    <div class="container-fluid mb-3">           
+        <!-- navbar-menu  -->           
+        <?php
+            $items = [];
+            /** @var Page[] $info */
+            $info = Page::find()
+            //  ->joinWith('translation')
+            // ->leftJoin('nxt_page_parent','nxt_page.category_idid = ')
+               ->select(['nxt_page.name', 'slug'])
+               ->andWhere(['category_id' => 8])
+               ->orderBy(['nxt_page.position' => SORT_ASC])
+               ->limit(5)
+               ->all();
+            $info_menu = [];
+            foreach ($info as $item) {
+                $info_menu[] = [
+                    'label' => $item->name,
+                    'url' => ['/info/view', 'slug' => $item->slug],
+                ];
+            }
+            ?>
+            <?php if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') : ?>
                 <!-- navbar-carousel  -->
-                <?php
+            <?php
                    /* $model = Slider ::find()-> one();
                     $slides = $model->slides;
                     foreach($slides as $sld){
@@ -113,13 +105,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
                             ];
                         }
                     }*/
-                    $model = Slider ::find()-> one();
-                        $slides = $model->slides;
-                        foreach($slides as $sld){
-                            if (($image = SliderImage::find()->where(['id' => $sld->id])->multilingual()->one()) !== null) {
-                            $sitems[] = [
-                        'content' => '<div class="home_slider_container">
-                                        <div class="text-center p-0"><div class="">'.
+                $model = Slider ::find()-> one();
+                $slides = $model->slides;
+                foreach($slides as $sld){
+                        if (($image = SliderImage::find()->where(['id' => $sld->id])->multilingual()->one()) !== null) {
+                        $sitems[] = [
+                       'content' => '<div class="home_slider_container">
+                                     <div class="text-center p-0"><div class="">'.
                             $image->render($sld->filename,"large",["class" => "slider-img"]).	
                                         '</div>',
                         'caption' => '<div class="slide-text">'.
@@ -150,38 +142,21 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
                             ],
                     ]) ?>
                 </div>
-                <?php endif;  ?>   
-    
-
+                <?php endif;  ?> 
     <div class="container my-2 my-md-3">
         <div class="row">
             <?php if (Yii::$app->controller->id !== 'site' || Yii::$app->controller->action->id !== 'index'): ?>
-              <!--  <div class="sidebar col-md-4 col-lg-3">
+                <!--  <div class="sidebar col-md-4 col-lg-3">
                     <div class="row">
                         <div class="col-sm-6 col-md-12">
                         
                         </div>                   
                     </div>
                 </div>  -->
-                <div class="mainblock col-md-8 col-lg-9">
+                <div class="mainblock col-md-10 col-lg-12">
             <?php else: ?>
                 <div class="mainblock col-12">
-            <?php endif; ?>
-                <?php
-                if (isset($this->params['breadcrumbs'])) {
-                    echo Html::tag(
-                        'div',
-                        Breadcrumbs::widget([
-                            'links' => $this->params['breadcrumbs'],
-                            'homeLink' => [
-                                'label' => Yii::$app->name,
-                                'url' => Yii::$app->homeUrl,
-                            ],
-                        ]), [
-                        'class' => 'bg-grey'
-                    ]);
-                }
-                ?>
+            <?php endif; ?>                
                 <?= $content ?>
             </div>
         </div>
@@ -253,12 +228,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => '@w
             </div>
         </div>
     </div>
-    <?php echo $this->render('_footer', ['items' => $items]); ?> 
+   
     <!-- Back-to-Top  -->    
     <?= Modal::widget([
        
     ]); ?>
-                              
+  </div> <!--  container fluid end -->    
+  <?php echo $this->render('_footer', ['items' => $items]); ?>                         
     <?php $this->endBody() ?>
 </body>
 </html>
