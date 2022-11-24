@@ -13,12 +13,12 @@ use app\widgets\OrderScheme;
             <div class="col-md-9 py-3 text-white">Get connected with us on social networks!</div>
             <div class="col-md-3 py-3 text-center text-white">
             <div class="d-inline-flex">
-                <a href="#" class="px-2" title="Follow on Facebook"><iconify-icon icon="ic:outline-facebook" style="color: #FFFFFF;" width="26" ></iconify-icon></i></a>
-                <a href="#" class="px-2"><iconify-icon icon="mdi:twitter" style="color: #FFF;" width="26" ></iconify-icon></a>
-                <a href="#" class="px-2"><iconify-icon icon="ri:instagram-line" style="color: #FFF;" width="26" ></iconify-icon></i></a>
-                <a href="#" class="px-2"><iconify-icon icon="typcn:social-linkedin" style="color: #FFF;" width="26" ></iconify-icon></a>
-                <a href="#" class="px-2"><iconify-icon icon="icon-park-outline:youtube" style="color: #FFF;" width="26" ></iconify-icon></a>
-                <a href="#" class="px-2"><iconify-icon icon="mingcute:pinterest-line" style="color: #FFF;" width="26" ></iconify-icon></a>
+                <a href="#" class="px-2" title="Follow on Facebook"><img src="/image/site/facebook.svg"></a>
+                <a href="#" class="px-2"><img src="/image/site/twitter.svg"></a>
+                <a href="#" class="px-2"><img src="/image/site/instagram.svg"></a>
+                <a href="#" class="px-2"><img src="/image/site/linkedin.svg"></a>
+                <a href="#" class="px-2"><img src="/image/site/youtube.svg"></a>
+                <a href="#" class="px-2"><img src="/image/site/pinterest.svg"></a>
             </div>
             </div>
         </div>

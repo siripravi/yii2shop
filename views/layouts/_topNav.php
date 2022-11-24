@@ -34,10 +34,10 @@ use yii\bootstrap5\Popover;
             ?>
               
             <?php
-            $menuItems = [];
+            $menuItems = [];//<iconify-icon icon="mdi:user-outline" style="color: #123;" width="20" rotate="0deg"></iconify-icon>
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = [
-                    'label' =>  Html::tag('span', '<iconify-icon icon="mdi:user-outline" style="color: #123;" width="20" rotate="0deg"></iconify-icon>',
+                    'label' =>  Html::tag('span', '<img src="/image/site/user.svg">',
                                       ["class"=>"d-inline-block", "tabindex"=>"0","data-bs-toggle"=>"popover", "data-bs-trigger"=>"hover focus", "data-bs-content"=>"click to login!"]),
                     'encode' => false,
                     'url' => ['/site/login'],
@@ -95,13 +95,13 @@ use yii\bootstrap5\Popover;
             <!-- cart like buttons -->
             <div class="position-relative d-inline me-3">
                 <button type="button" class="btn btn-light position-relative rounded-circle border-2">
-                    <iconify-icon icon="mdi:cards-heart" style="color: #123;" width="20" ></iconify-icon>
+                <img src="/image/site/heart.svg">
                             <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                             <span class="visually-hidden">Liked</span>
                             </span>
                 </button>
                 <button type="button" class="btn btn-info position-relative rounded-circle border-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                        <iconify-icon icon="material-symbols:shopping-cart" style="color: #FFF;" width="20" ></iconify-icon>
+                <img src="/image/site/cart.svg">
                         <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                             <span class="visually-hidden">Shopping cart</span>
                         </span>
@@ -109,8 +109,8 @@ use yii\bootstrap5\Popover;
                 <?= CartIconWidget::widget();?>
             </div>     
             <div class="d-inline-flex ps-4">
-                <?= Html::a('<iconify-icon icon="emojione:flag-for-united-states" style="font-size: 24px;"></iconify-icon>', Url::current(['lang' => 'en']), ['class' => ['btn btn-sm', Yii::$app->language === 'en' ? '' : ''], 'hreflang' => 'us-EN', 'rel' => 'nofollow']) ?>
-                <?= Html::a('<iconify-icon icon="emojione:flag-for-india" style="font-size: 24px;"></iconify-icon>', Url::current(['lang' => 'hi']), ['class' => ['btn btn-sm', Yii::$app->language === 'hi' ? '' : ''], 'hreflang' => 'hi-IN', 'rel' => 'nofollow']) ?>
+                <?= Html::a('<img src="/image/site/flag-us.svg">', Url::current(['lang' => 'en']), ['class' => ['btn btn-sm', Yii::$app->language === 'en' ? '' : ''], 'hreflang' => 'us-EN', 'rel' => 'nofollow']) ?>
+                <?= Html::a('<img src="/image/site/flag-ind.svg">', Url::current(['lang' => 'hi']), ['class' => ['btn btn-sm', Yii::$app->language === 'hi' ? '' : ''], 'hreflang' => 'hi-IN', 'rel' => 'nofollow']) ?>
             </div>
             
         </div>

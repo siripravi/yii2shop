@@ -40,8 +40,8 @@
                     ]);
                     ?>
                     <span class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            <iconify-icon icon="ic:baseline-search" style="width:20px;"></iconify-icon>
+                        <button class="ps-2 btn btn-outline bg-info round-circle border-2" type="submit">
+                        <img src="/image/site/search.svg">
                         </button>
                     </span>
                 </form>

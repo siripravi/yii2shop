@@ -64,10 +64,10 @@ if (@$model->variants[0]->price) {
         </div>
         <div class="btn-group  d-flex" role="group">
             <button type="button" class="btn btn-sm btn-primary" title="Add to cart">
-                <iconify-icon icon="ei:cart" style="font-size:32px"></iconify-icon>
+            <img src="/image/site/cart.svg">
             </button>
             <a type="button" href="<?= $link; ?>" class="btn btn-sm btn-outline-warning" title="View Detail">
-                <iconify-icon icon="carbon:view" width="32" height="32"></iconify-icon>
+            <img src="/image/site/eye.svg">
             </a>
         </div>
     </div>

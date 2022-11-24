@@ -20,12 +20,12 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '//unicons.iconscout.com/release/v4.0.0/css/line.css',
+      //  '//unicons.iconscout.com/release/v4.0.0/css/line.css',
         'css/site.css',
       // 'css/Style1.css'
     ];
     public $js = [
-        '//code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js',
+       // '//code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js',
         //'js/main.js'
     ];
     public $depends = [
