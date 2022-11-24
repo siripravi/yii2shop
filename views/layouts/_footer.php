@@ -53,7 +53,7 @@ use app\widgets\OrderScheme;
                             echo Menu::widget([
                                 'items' => $items,
                                 'encodeLabels' => false,
-                                'linkTemplate' => '<a class="text-decoration-none text-white stretched-link" href="{url}"><iconify-icon icon="mdi:arrow-right-thick" style="color:#ffc720"></iconify-icon>&nbsp;&nbsp;{label}</a>',
+                                'linkTemplate' => '<a class="text-decoration-none text-white stretched-link" href="{url}"><img src="/image/site/arrow-r.svg">&nbsp;&nbsp;{label}</a>',
                                 'options' => ['class' => 'list-group list-group-flush','style'=>'list-style:none;'],
                             ]);
                             ?>                        
