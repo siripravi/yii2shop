@@ -29,10 +29,10 @@ use app\widgets\OrderScheme;
                 <div class="mb-3">    
                     <h1><span class=" border rounded-2 border-warning px-3 me-2">N</span>yxta</h1>
                 </div>
-                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-warning me-3"></i>696 Street, Tehran, IRAN</p>
-                <p class="mb-2"><i class="fa fa-envelope text-warning me-3"></i>koutis353@gmail.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-warning me-3"></i>+989351588287</p>
+                <p>Home made craft store</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-warning me-3"></i>hyderabad, INDIA</p>
+                <p class="mb-2"><i class="fa fa-envelope text-warning me-3"></i>support@nyxta.in</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-warning me-3"></i>(+91) 83318 52700</p>
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row justify-content-evenly">

@@ -1,0 +1,32 @@
+# Your project's server will run on proxy
+PROXY: "https://localhost"
+
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist: "assets/dist"
+  # Path to source folder
+  src: "assets/src"
+  # Paths to fonts
+  fonts:
+    - "vendor/bower-asset/font-awesome/fonts/**/*"
+    - "vendor/bower-asset/bootstrap/fonts/**/*"
+  # Paths to Sass libraries, which can then be loaded with @import
+  sass:
+    - "vendor/bower-asset/bootstrap/scss"
+    - "vendor/bower-asset/fontawesome/scss"
+  # Paths to JavaScript libraries, which are compined into one file
+  javascript:
+    - "vendor/bower-asset/jquery/dist/jquery.js"
+    - "vendor/bower-asset/bootstrap/dist/js/bootstrap.bundle.min.js"
+    - "vendor/yiisoft/yii2/assets/yii.js"
+    - "vendor/yiisoft/yii2/assets/yii.validation.js"
+    - "vendor/yiisoft/yii2/assets/yii.activeForm.js"
+    # Paths to your own project code are here
+    - "assets/src/js/!(custom).js"
+    - "assets/src/js/custom.js"

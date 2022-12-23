@@ -1,45 +1,16 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
 namespace app\assets;
 
 use yii\web\AssetBundle;
 
-/**
- * Main application asset bundle.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@app/assets/dist';
     public $css = [
-      //  '//unicons.iconscout.com/release/v4.0.0/css/line.css',
-        'css/site.css',
-      // 'css/Style1.css'
+         'css/all.css'    //YII_ENV_DEV ?  YII_ENV_DEV ?
     ];
     public $js = [
-       // '//code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js',
-        //'js/main.js'
+        'js/all.js'    // YII_ENV_DEV ? : 'js/all.min.js'
     ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
-        'app\assets\ExampleAsset'
-    ];
-
-    public function setCSSJSFiles($css,$js)
-   {
-    $this->css = array($css);        
-    $this->js = array($js);
-   }
-  // public function __construct(){
-  //  $this->jsOptions= ['depends' => $this->depends];
-   //}
 }
+

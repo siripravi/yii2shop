@@ -15,6 +15,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
         '@admin'  => '@app/admin'
     ],
+    
     'components' => [
         /*'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -33,31 +34,35 @@ $config = [
             'linkAssets' => true,
             'appendTimestamp' => true,
             'bundles' => [
-                \yii\authclient\widgets\AuthChoiceStyleAsset::class => false
-            ]
-        ],
-        'assetManager' => [
-            'appendTimestamp' => true,
-            'class' => 'yii\web\AssetManager',
-            'bundles' => [
-                'yii\web\JqueryAsset' => array(
+              /* '\yii\authclient\widgets\AuthChoiceStyleAsset::class' => false,           
+                'yii\bootstrap5\BootstrapPluginAsset' => [
+                   'js' => [], //'@web/css/styles.css',
+                ],*/
+                'yii\bootstrap5\BootstrapAsset' => [
+                    'css' => [], //'@web/css/styles.css',
+                ],
+                'yii\web\JqueryAsset' => [
                     'sourcePath' => null,
-                    'js' => array(
+                    'js' => [
                         'https://code.jquery.com/jquery-3.2.1.min.js',
-                    ),
-                ),
-                'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [],
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'js' => [],
-                ],
-                //'yii\web\JqueryAsset' => false,
-                'yii\bootstrap\BootstrapThemeAsset' => [
-                    'css' => [],
+                    ],
                 ],
             ],
         ],
+       /* 'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap5\BootstrapAsset' => false,
+                'yii\validators\ValidationAsset' => false,
+                'yii\web\YiiAsset' => false,
+                'yii\widgets\ActiveFormAsset' => false,
+                'yii\bootstrap5\BootstrapPluginAsset' => false,
+                'yii\web\JqueryAsset' => false,
+                //'yii\authclient\widgets\AuthChoiceAsset' => false, //authchoice.js
+                //'yii\authclient\widgets\AuthChoiceStyleAsset' => false, //authchoice.css
+            ],
+            'linkAssets' => true,
+            'appendTimestamp' => true,
+        ],*/
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

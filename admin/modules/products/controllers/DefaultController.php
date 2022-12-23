@@ -160,7 +160,7 @@ class DefaultController extends BaseAdminController
                 
                 $valid = $model->validate();
                 $valid = Model::validateMultiple($modelsVariant) && $valid;
-                echo "<pre>"; print_r(Model::validateMultiple($images));die;
+               // echo "<pre>"; print_r(Model::validateMultiple($images));die;
                 $valid = Model::validateMultiple($images) && $valid;                
                 $valid = Model::validateMultiple($files) && $valid;
 

@@ -17,7 +17,7 @@ use yii\widgets\Pjax;
 ?>
 <?php $form = ActiveForm::begin(); ?>
 <div class="card  border-secondary mb-3 col-6">
-    <div class="card-header bg-secondary d-flex">      
+    <div class="card-header bg-primary d-flex">      
         <ul class="nav nav-pills gap-4 nav-fill">
             <?php foreach (Language::suffixList() as $suffix => $name) : ?>
                 <li class="nav-item"><a href="#lang<?= $suffix ?>" class="nav-link <?= empty($suffix) ? ' active': '' ?>" data-bs-toggle="tab"><?= $name ?></a></li>

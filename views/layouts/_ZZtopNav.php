@@ -36,7 +36,7 @@ use yii\helpers\Url;
         ];
        ?>
         <div class="col-auto me-auto">
-            <ul class="top-nav">
+            <ul class="xtop-nav">
                 <li>
                    <a style="color:#fff"><iconify-icon icon="clarity:phone-handset-line" style="color: #FFF;" width="20" rotate="0deg"></iconify-icon>
                          +91 833-185-27000</a>                             
@@ -48,7 +48,7 @@ use yii\helpers\Url;
         </div>
         <div class="col-auto me-auto">
         <?= Nav::widget([
-            'options' => ['class' => "top-nav"],
+            'options' => ['class' => "xtop-nav"],
             'items' => $menuItems,
         ]); ?>
         </div>
@@ -118,7 +118,7 @@ use yii\helpers\Url;
         ?>
          <div class="col-auto">
         <?= Nav::widget([
-            'options' => ['class' => 'top-nav'],
+            'options' => ['class' => 'xtop-nav'],
             'items' => $menuItems,
         ]); ?>
         </div>

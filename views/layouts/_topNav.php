@@ -15,7 +15,7 @@ use yii\bootstrap5\Popover;
             <div class="row g-3">
             <div class="col-md-3 text-center">
             <span class="gaozhan-logo"><a href = "/"> 
-                <img src = "/image/site/nyxta.png" alt="Nyxta" style="max-height: 80%; padding: 0;position:relative;">
+                <img src = "/image/site/nyxta.png" alt="Nyxta" style="max-height: 98%; padding: 0;position:relative;">
                 </a>
             </div>
             <div class="col-md-5">
@@ -87,7 +87,7 @@ use yii\bootstrap5\Popover;
                           
             <div class="btn-group">
                 <?= Nav::widget([
-                        'options' => ['class' => 'top-nav'],
+                        'options' => ['class' => 'xtop-nav'],
                         'items' => $menuItems,
                 ]); ?>
             </div>              
@@ -154,7 +154,7 @@ use yii\bootstrap5\Popover;
                 ?>      
                 <div class="col-auto me-auto">
                         <?= Nav::widget([
-                            'options' => ['class' => "top-nav"],
+                            'options' => ['class' => "xtop-nav"],
                             'items' => $menuItems,
                         ]); ?>
                 </div>

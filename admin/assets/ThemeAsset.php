@@ -15,7 +15,8 @@ class ThemeAsset extends AssetBundle
         /* You can add extra CSS file here if you need */
         // 'css/demopager.css'
        // 'css/libs.bundle.css',
-       'css/theme.bundle.css'
+       'css/theme.bundle.css',
+       'css/custom.css'
 
     ];
 

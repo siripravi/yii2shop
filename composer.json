@@ -43,11 +43,13 @@
         "kartik-v/yii2-widget-sidenav": "*",
         "lesha724/yii2-math-captcha": "*"
         
+        
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
         "yiisoft/yii2-gii": "~2.2.0",
-        "yiisoft/yii2-faker": "~2.0.0"
+        "yiisoft/yii2-faker": "~2.0.0",
+        "bizley/migration": "^4.0"
        
     },
     "config": {

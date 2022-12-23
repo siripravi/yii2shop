@@ -155,7 +155,7 @@ $this->registerJs($js);
             ];        
         ?> 
 
-<div class="card bg-secondary mb-3">      
+<div class="card bg-primary mb-3">      
         <div class="card-header">       
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">             
                 <?= Html::submitButton($model->isNewRecord ? "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Create') : "<i class='fas fa-save'></i>&nbsp;" .Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-md btn-warning' : 'btn btn-warning']) ?>

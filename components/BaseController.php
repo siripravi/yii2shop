@@ -23,7 +23,7 @@ class BaseController extends \yii\web\Controller
 	//public $searchForm;
 	//public $searchDataProvider;
 	
-    public $layout = 'base';
+  //  public $layout = 'base';
 	public $secClass = "container my-2 my-md-3";
 	public $bannerTitle = "Some Title";
     public function beforeAction($action)

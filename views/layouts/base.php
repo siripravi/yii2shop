@@ -8,7 +8,7 @@ use yii\helpers\Url;
 
 use kartik\icons\Icon;
 
-$asset = SiteAsset::register($this);
+$asset = AppAsset::register($this);
 //FontAwesomeAsset::register($this);
 
 $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::to((Yii::$app->language === 'en' ? '/en' : null) . explode('?', Yii::$app->request->url)[0], true)]);
