@@ -52,7 +52,7 @@ use yii\helpers\Url;
     <?php endforeach; ?>
 
 			
-<!--?= \dominus77\owlcarousel2\Carousel::widget([
+<?= \dominus77\owlcarousel2\Carousel::widget([
     'items' => $this->render('_nav',['categories' => $categories]), // example
     'theme' => \dominus77\owlcarousel2\Carousel::THEME_GREEN, // THEME_DEFAULT, THEME_GREEN
     'tag' => 'div', // container tag name, default div
@@ -73,7 +73,7 @@ use yii\helpers\Url;
             ],
         ],
     ],
-]); ?-->
+]); ?>
 </div>
 
 </div>

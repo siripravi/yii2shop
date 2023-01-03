@@ -73,14 +73,14 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'view' => [
+       /* 'view' => [
             'class' => 'yii\web\View',
             'theme' => [
               'class' => 'yii\base\Theme',
               'pathMap' => ['@app/views' => 'themes/alpine'],
               'baseUrl'   => 'themes/alpine'
             ]
-            ],
+            ],*/
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,
             'viewPath' => '@app/mail',

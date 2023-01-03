@@ -22,7 +22,7 @@ PATHS:
     - "vendor/bower-asset/fontawesome/scss"
   # Paths to JavaScript libraries, which are compined into one file
   javascript:
-    - "vendor/bower-asset/jquery/dist/jquery.js"
+   # - "vendor/bower-asset/jquery/dist/jquery.js"
     - "vendor/bower-asset/bootstrap/dist/js/bootstrap.bundle.min.js"
     - "vendor/yiisoft/yii2/assets/yii.js"
     - "vendor/yiisoft/yii2/assets/yii.validation.js"

@@ -44,6 +44,28 @@ $this->title = 'Nyxta';
 
     <div class="body-content">
         <div class="row">
+        <?= \dominus77\owlcarousel2\Carousel::widget([
+    'items' => $this->render('@dominus77/owlcarousel2/example/_items'), // example
+    //'theme' => \dominus77\owlcarousel2\Carousel::THEME_GREEN, // THEME_DEFAULT, THEME_GREEN
+    //'tag' => 'div', // container tag name, default div
+    //'containerOptions' => [/* ... */], // container html options
+    'clientOptions' => [
+        'loop' => true,
+        'margin' => 10,
+        'nav' => true,
+        'responsive' => [
+            0 => [
+                'items' => 1,
+            ],
+            600 => [
+                'items' => 3,
+            ],
+            1000 => [
+                'items' => 5,
+            ],
+        ],
+    ],
+]); ?>
             <?= \dominus77\owlcarousel2\Carousel::widget([
                 'items' => $this->render('_nav',['categories'=>$categories]), // example
                 'theme' => \dominus77\owlcarousel2\Carousel::THEME_GREEN, // THEME_DEFAULT, THEME_GREEN

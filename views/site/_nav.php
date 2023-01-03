@@ -8,40 +8,41 @@ use yii\widgets\Menu;
 use app\helpers\ImageHelper;
 //app\assets\ExampleAsset::register($this);
 ?>
-    <?php
-        $idx = 0;
-        /** @var $categories Category[] */
-		$cache = Yii::$app->cache;
-        $categories = Category::getMain();
-		!$cache->exists('_categories-' . Yii::$app->language) ? Category::getMain() : [];
-        $items = [];
-        foreach ($categories as $category) {
-			$count = count($category->categories);
-			$url = ($count) ? ['category/pod', 'slug' => $category->slug] : ['category/view', 'slug' => $category->slug];
-            $items[$category->id] = [
-                    'label' => $category->name,
-                    'url' => ($count) ? ['category/pod', 'slug' => $category->slug] : 
-					['category/view', 'slug' => $category->slug],
+<?php
+    $idx = 0;
+    /** @var $categories Category[] */
+	$cache = Yii::$app->cache;
+    $categories = Category::getMain();
+	//!$cache->exists('_categories-' . Yii::$app->language) ? Category::getMain() : [];
+    $items = [];
+    foreach ($categories as $category) {
+		$count = count($category->categories);
+		$url = ($count) ? ['category/pod', 'slug' => $category->slug] : 
+					['category/view', 'slug' => $category->slug];
+        $items[$category->id] = [
+                'label' => $category->name,
+                'url' => ($count) ? ['category/pod', 'slug' => $category->slug] : 
+				['category/view', 'slug' => $category->slug],
                     'options' => ['tag' => false],
-            ];
+        ];
         
-           /* echo Menu::widget([
-                       'items' => $items,
-                       'linkTemplate' => '<a class="nav-link" href="{url}">{label}</a>',
-                       'options' => [
-                                   'tag' => 'div',
-                                   'class' => 'nav nav-left flex-column',
-                            ],
-                        ]);
-			*/
-			$idx = ++$idx;
-			$active='';
+        /* echo Menu::widget([
+                    'items' => $items,
+                    'linkTemplate' => '<a class="nav-link" href="{url}">{label}</a>',
+                    'options' => [
+                                'tag' => 'div',
+                                'class' => 'nav nav-left flex-column',
+                    ],
+                ]);
+		*/
+		$idx = ++$idx;
+		$active='';
 			
-			if(isset($catTitle) && $category->slug == $catTitle){
+		if(isset($catTitle) && $category->slug == $catTitle){
 			   $active = ' categories__item_current';	
-			}
+		}
 			
-			$label = $category->getShortTitle()
+		$label = $category->getShortTitle()
 				. '<span class="badge pull-right">'
 				. "3"
 				. '</span>';
@@ -59,5 +60,4 @@ use app\helpers\ImageHelper;
 			</div></a>
 			</div>';
 	}
-    ?>
-	
+?>
