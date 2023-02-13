@@ -1,0 +1,31 @@
+{
+  "name": "yii2-ecommerce",
+  "version": "1.0.0",
+  "description": "Open Source Yii2 E-commerce website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --config webpack.dev.js",
+    "prod": "npx webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodeholic/yii2-ecommerce-website.git"
+  },
+  "keywords": [],
+  "author": "Zura Sekhniashvili <zurasekhniashvili@gmail.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/thecodeholic/yii2-ecommerce-website/issues"
+  },
+  "homepage": "https://github.com/thecodeholic/yii2-ecommerce-website#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.7",
+    "mini-css-extract-plugin": "^1.6.2",
+    "sass": "^1.43.2",
+    "sass-loader": "^10.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

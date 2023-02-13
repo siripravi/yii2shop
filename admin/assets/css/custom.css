@@ -1,0 +1,17 @@
+body{
+    background-color:#6a9976;
+}
+.nav-pills .nav-link{
+    border-radius:0;
+    font-size:1rem;
+}
+.card .nav{
+    background-color:black;
+}
+.card .tab-content{
+       background-color:#6dcd83;
+}
+
+.bg-dark-700{
+    background-color:#0e150a;
+}
